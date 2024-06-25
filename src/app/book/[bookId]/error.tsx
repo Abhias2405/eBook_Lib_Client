@@ -1,4 +1,3 @@
-// app/book/[bookId]/error.tsx
 'use client';
 
 import { useEffect } from 'react';
@@ -18,10 +17,10 @@ export default function Error({
     return (
         <div className="min-h-[50vh] flex flex-col items-center justify-center px-4">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                Sorry, we couldn't find that book
+                Sorry, we couldn&#39;t find that book
             </h2>
             <p className="text-gray-600 mb-6">
-                The book you're looking for might have been removed or is temporarily unavailable.
+                The book you&#39;re looking for might have been removed or is temporarily unavailable.
             </p>
             <div className="flex gap-4">
                 <button
