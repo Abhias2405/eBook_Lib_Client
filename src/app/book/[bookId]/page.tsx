@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Book } from '@/types';
+import DownloadButton from './components/DownloadButton';
 
 const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
     console.log('params', params);
@@ -27,6 +28,7 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
                 <h1 className="mb-4 text-4xl font-bold tracking-tight leading-[1.2]">{book.title}</h1>
                 <h3 className="text-lg font-semibold text-gray-700 mb-6">by {book.author.name}</h3>
                 <p className="text-md leading-7 text-gray-700">{book.description}</p>
+                <DownloadButton fileLink={book.file} />
             </div>
 
             {/* Right Section (Image) */}
