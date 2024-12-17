@@ -3,25 +3,25 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <nav className="border-b border-primary-100 bg-primary-50 shadow-subtle">
+        <nav className="border-b bg-white shadow-sm">
             <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
-                {/* Logo */}
-                <Link href={'/'}>
-                    <div className="flex items-center gap-2">
-                        <Hexagon />
-                        <span className="text-2xl font-semibold text-primary-700 tracking-wide">
-                            Coders Library
-                        </span>
+                {/* Logo Section */}
+                <Link href={'/'} className="flex items-center gap-2">
+                    <div className="relative h-10 w-10 bg-accent-500 rounded-md flex items-center justify-center shadow-md">
+                        <BookIcon />
                     </div>
+                    <span className="text-2xl font-bold uppercase tracking-tight text-accent-700">
+                        Coders Library
+                    </span>
                 </Link>
 
-                {/* Actions */}
+                {/* Buttons */}
                 <div className="flex items-center gap-4">
-                    <button className="h-10 px-5 rounded border border-primary-200 text-primary-600 text-sm font-medium transition-shadow hover:shadow-medium active:scale-95">
-                        Sign In
+                    <button className="h-10 rounded-md border border-accent-500 px-4 py-2 text-sm font-medium text-accent-600 transition-all hover:bg-accent-100 active:scale-95">
+                        Sign in
                     </button>
-                    <button className="h-10 px-5 rounded bg-accent-500 text-white text-sm font-medium shadow-subtle hover:bg-accent-600 active:scale-95">
-                        Sign Up
+                    <button className="h-10 rounded-md bg-accent-500 px-4 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-accent-600 active:scale-95">
+                        Sign up
                     </button>
                 </div>
             </div>
@@ -29,21 +29,20 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
-
-// Minimal Hexagon Logo
-const Hexagon = () => (
+const BookIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
+        fill="#fff"
         viewBox="0 0 24 24"
-        fill="#9e9784"
-        stroke="#655f57"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="drop-shadow-sm">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+        strokeWidth={2}
+        stroke="#1d4e89"
+        className="h-6 w-6">
+        <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+        />
     </svg>
 );
+
+export default Navbar;
