@@ -15,15 +15,15 @@ const Navbar = () => {
                     </span>
                 </Link>
 
-                {/* Buttons */}
-                <div className="flex items-center gap-4">
+                {/* Buttons */} 
+                {/* <div className="flex items-center gap-4">
                     <button className="h-10 rounded-md border border-accent-500 px-4 py-2 text-sm font-medium text-accent-600 transition-all hover:bg-accent-100 active:scale-95">
                         Sign in
                     </button>
                     <button className="h-10 rounded-md bg-accent-500 px-4 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-accent-600 active:scale-95">
                         Sign up
                     </button>
-                </div>
+                </div> */}
             </div>
         </nav>
     );
