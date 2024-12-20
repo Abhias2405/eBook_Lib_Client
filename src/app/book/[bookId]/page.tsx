@@ -35,7 +35,7 @@ const SingleBookPage = async ({ params: { bookId } }: { params: { bookId: string
                         {book.title}
                     </h1>
                     <h3 className="text-lg font-semibold text-gray-700 mb-6">
-                        by {book.author.name}
+                        by {book.writer}
                     </h3>
                     <p className="text-md leading-7 text-gray-700">{book.description}</p>
                     <DownloadButton fileLink={book.file} />

@@ -1,6 +1,7 @@
 export type Book = {
     _id: string;
     title: string;
+    writer: string;
     description: string;
     coverImage: string;
     file: string;
