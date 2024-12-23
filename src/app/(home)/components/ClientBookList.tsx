@@ -19,9 +19,9 @@ const Pagination = ({
     const maxVisibleButtons = 5;
 
     const getPageNumbers = () => {
-        let pages = [];
+        const pages = []; // Changed from `let` to `const`
         let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
-        let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+        const endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1); // Changed from `let` to `const`
 
         if (endPage - startPage + 1 < maxVisibleButtons) {
             startPage = Math.max(1, endPage - maxVisibleButtons + 1);
