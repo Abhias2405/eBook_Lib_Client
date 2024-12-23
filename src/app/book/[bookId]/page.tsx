@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import { Book } from '@/types';
 import DownloadButton from './components/DownloadButton';
 
-const SingleBookPage = async ({ params: { bookId } }: { params: { bookId: string } }) => {
+const SingleBookPage = async ({ params }: { params: Promise<{ bookId: string }> }) => {
     try {
+        // Await params
+        const { bookId } = await params;
+
         const response = await fetch(`${process.env.BACKEND_URL}/books/${bookId}`, {
             next: {
                 revalidate: 3600,
@@ -17,7 +19,6 @@ const SingleBookPage = async ({ params: { bookId } }: { params: { bookId: string
         }
 
         const result = await response.json();
-        console.log('API Response:', result); 
 
         // Handle potential data structures
         const book = result?.data?.book || result?.data || result;
@@ -55,10 +56,9 @@ const SingleBookPage = async ({ params: { bookId } }: { params: { bookId: string
                 </div>
             </div>
         );
-
     } catch (error) {
         console.error('Error in SingleBookPage:', error);
-        throw error; 
+        throw error;
     }
 };
 
